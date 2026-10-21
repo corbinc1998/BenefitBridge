@@ -1,0 +1,25 @@
+<Project>
+  <!--
+    Applies to every .csproj under this folder.
+    Strict on purpose: nullable reference types on, and warnings fail the build.
+    If a warning is genuinely wrong, suppress that one warning in that one place
+    with a comment explaining why. Do not turn these settings off.
+
+    AnalysisLevel is "latest" (the default rule set). Once you are comfortable,
+    try "latest-recommended" for a stricter set of code-quality rules and fix
+    what it flags. That is a good stretch exercise for Session 7.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+  <!-- Test projects: allow Method_Scenario_Expected style names. -->
+  <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('Tests'))">
+    <NoWarn>$(NoWarn);CA1707</NoWarn>
+  </PropertyGroup>
+</Project>
