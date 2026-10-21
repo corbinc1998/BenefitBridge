@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/BenefitBridge.Domain/BenefitBridge.Domain.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/BenefitBridge.Domain.Tests/BenefitBridge.Domain.Tests.csproj" />
+  </Folder>
+</Solution>
